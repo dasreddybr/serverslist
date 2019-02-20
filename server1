@@ -26,3 +26,23 @@ PATH=$PATH:$JAVA_HOME:$M2_HOME:$M2:$HOME/bin
 vi .bash_profile
  get maven version by using mvn --version
 
+
+===============jenkins installation steps=====================
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+yum install jenkins
+# we need to set firewalls
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp   
+sudo firewall-cmd --reload
+# start the SEVICES
+systemctl start jenkins
+systemctl enable jenkins
+
+# chech browser in with ip address:8080
+192.168.202.136:8080
+
+1.install suggested pluginsst
+
+username : server1
+password : xxxxxxxx
+
