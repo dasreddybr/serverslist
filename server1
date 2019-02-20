@@ -1,0 +1,28 @@
+# java installation steps
+
+1.yum install java-1.8.0
+2.yum install java-1.8.0-devel
+3.find /usr/lib/jvm/java-1.8* | head -n 3
+
+# update bash profile
+vi .bash_profile
+
+  JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
+  PATH=$PATH:$JAVA_HOME:$HOME/bin
+# We have to refresh
+source ~/.bash_profile
+
+# we have to know the java path by using below command
+echo $JAVA_HOME
+# maven installation steps
+1. wget path
+
+2.setup M2_HOME and M2 paths in .bash_profile of user
+  
+   M2_HOME=/opt/maven  
+   M2=$M2_HOME/bin
+PATH=$PATH:$JAVA_HOME:$M2_HOME:$M2:$HOME/bin
+#update bash profile
+vi .bash_profile
+ get maven version by using mvn --version
+
